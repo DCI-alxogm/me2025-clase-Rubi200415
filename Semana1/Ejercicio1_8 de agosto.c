@@ -1,6 +1,6 @@
 //8 de agosto del 2025
 
-#include <studio.h>
+#include <stdio.h>
 #include <math.h>
 
 int main(){
@@ -9,19 +9,20 @@ int main(){
 
   printf ("Números: ")
   for (i=0; i<5; i++){
-    printf ("%.3f", Numeros[1]);
+    printf ("%.3f", Numeros[i]);
   }
 
-  printf ("Resultados de las funciones /n");
-  printf ("f(x) = x^2     f(x) = log(x+1)    f(x) = exp(x) + cos(x)/n");
+  printf("\n\nResultados de las funciones\n");
+    printf("x        x^2       log(x+1)    exp(x)+cos(x)\n");
 
-  for (int i=0; i<5; i++){
-    float x= Numeros[i];
-      float x^2= x*x;
-      float log(x+1)= log(x+1);
-      float exponencial_cos= exp(x)+ cos(x);
-    
-    printf ("%.3f     %.3f      %.3f      %.3f", x, x^2, log(x+1), exponencial_cos);
-  }
-  return 0;
+    for (i = 0; i < 5; i++) {
+        float x = Numeros[i];
+        float cuadrado = x * x;
+        float logaritmo = log(x + 1);
+        float exp_cos = exp(x) + cos(x);
+
+        printf("%.3f   %.3f     %.3f      %.3f\n", x, cuadrado, logaritmo, exp_cos);
+    }
+
+    return 0;
 }
