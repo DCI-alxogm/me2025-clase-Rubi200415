@@ -7,7 +7,7 @@ int main(){
   float Numeros[5] = {1.2,3.5,5.1,7.2,9.5};
   int i;
 
-  printf ("Números: ")
+  printf ("Números: ");
   for (i=0; i<5; i++){
     printf ("%.3f", Numeros[i]);
   }
@@ -26,3 +26,4 @@ int main(){
 
     return 0;
 }
+
