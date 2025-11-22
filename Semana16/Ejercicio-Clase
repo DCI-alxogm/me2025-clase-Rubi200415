@@ -1,0 +1,29 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data=pd.read_excel("/content/Experimental water adsorption isotherms.xlsx")
+
+RB=data[data["Type"]=='Roasted beans']
+RB=RB[RB["Replicate"]==1]
+RB_25=RB[RB["Temperature"]==25]
+RB_35=RB[RB["Temperature"]==35]
+RB_45=RB[RB["Temperature"]==45]
+
+RB
+
+wa_25=np.asarray(RB_25["Water activity"])
+Xe_25=np.asarray(RB_25["Moisture content (% wet basis)"])
+wa_35=np.asarray(RB_35["Water activity"])
+Xe_35=np.asarray(RB_35["Moisture content (% wet basis)"])
+wa_45=np.asarray(RB_45["Water activity"])
+Xe_45=np.asarray(RB_45["Moisture content (% wet basis)"])
+
+plt.plot(wa_25,Xe_25, '.')
+plt.plot(wa_35,Xe_35, '.')
+plt.plot(wa_45,Xe_45, '.')
+
+np.savetxt("RB_25,txt",np.c_[wa_25,Xe_25])
+np.savetxt("RB_35,txt",np.c_[wa_35,Xe_35])
+np.savetxt("RB_45,txt",np.c_[wa_45,Xe_45])
+     
